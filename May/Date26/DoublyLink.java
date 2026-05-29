@@ -26,6 +26,7 @@ public class DoublyLink {
     head.prev=n;
     }
     head=n;
+    return;
     }
     Node temp=head;
     for(int i=1;i<pos-1&&temp!=null;i++){
