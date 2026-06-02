@@ -1,5 +1,5 @@
 
-package June.Date1;
+package June;
 
 import java.util.Scanner;
 

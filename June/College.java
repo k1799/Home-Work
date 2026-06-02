@@ -1,5 +1,5 @@
 
-package June.Date1;
+package June;
 
 
 public class College {
