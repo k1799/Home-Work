@@ -16,7 +16,8 @@ public class ShoppingCart {
     Scanner sc=new Scanner(System.in);
 
     void addItem(){
-      
+        sc.nextLine();
+
         System.out.println("Enter Cart Owner Name: ");
         cartOwnerName = sc.nextLine();
         
