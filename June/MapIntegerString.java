@@ -24,8 +24,11 @@ public class MapIntegerString {
         //Remove key value
         student.remove(103);
         
-        for(Object obj : student.keySet()){
+        /*for(Object obj : student.keySet()){
             System.out.println(obj+" -> "+student.get(obj));
+        }*/
+        for (Map.Entry<Integer, String> entry : student.entrySet()) {
+            System.out.println(entry.getKey() + " -> " + entry.getValue());
         }
     }
 }
