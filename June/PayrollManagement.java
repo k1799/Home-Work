@@ -2,6 +2,7 @@
 package June;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.Scanner;
 
 
@@ -12,7 +13,7 @@ public class PayrollManagement {
         ArrayList<Employee> employees=new ArrayList<>();
         
         while(true){
-            System.out.println("1.Add Employee");
+            System.out.println("\n1.Add Employee");
             System.out.println("2.View Employees");
             System.out.println("3.Search Employee");
             System.out.println("4.Update Salery");
@@ -39,9 +40,9 @@ public class PayrollManagement {
                         System.out.println("Employee Id Alerady Exists");
                         break;
                     }
-                    
+                    else{
                     sc.nextLine();
-                    System.out.print("Name: ");
+                    System.out.print("Enter Employee Name: ");
                     String name=sc.nextLine();
                     
                     System.out.print("Department: ");
@@ -52,6 +53,7 @@ public class PayrollManagement {
                     
                     employees.add(new Employee(id,name,dept,salary));
                     System.out.println("Employee Added");
+                    }
                     break;
                 case 2:
                     if(employees.isEmpty()){
@@ -64,7 +66,7 @@ public class PayrollManagement {
                     }
                     break;
                 case 3:
-                    System.out.println("Employee Id");
+                    System.out.println("Enter Employee Id");
                     id=sc.nextInt();
                     
                     boolean found=false;
@@ -86,10 +88,11 @@ public class PayrollManagement {
                     found=false;
                     for(Employee e:employees){ 
                     if(e.emId==id){
-                        found=true;
-                        System.out.println("New Salary");
+                        System.out.println("Enter New Salary");
                         e.basicSalary=sc.nextDouble();
-                        System.out.println("Updated");
+                        System.out.println("Salary Updated Successfully.");
+                        found=true;
+                        break;
                     }
                     }
                     if(!found){
@@ -97,14 +100,15 @@ public class PayrollManagement {
                     }
                     break;
                 case 5:
-                   System.out.println("Employee Id");
+                   System.out.println("Enter Employee Id");
                     id=sc.nextInt();
                     
                      found=false; 
                      for(Employee e:employees){
                      if(e.emId==id){
-                         found=true;
-                         System.out.println("Net Salary = "+e.calculateNetSalery());
+                        System.out.println("Net Salary = "+e.calculateNetSalery());
+                        found=true;
+                        break;
                      }
                      }
                      if(!found){
@@ -121,7 +125,7 @@ public class PayrollManagement {
                      System.out.println("Deleted");*/
                      
                      //ithu innoru mathod
-                    Employee temp=null;
+                    /*Employee temp=null;
                      for(Employee e:employees){
                      if(e.emId==id){
                      temp=e;
@@ -135,10 +139,27 @@ public class PayrollManagement {
                      }
                      else{
                          System.out.println("Employee Not Found");
-                     }
+                     }*/
                      
+                    //ithu Iterator Method
+                     Iterator<Employee> itr=employees.iterator();
+                     while(itr.hasNext()){
+                     Employee e=itr.next();
+                     
+                     if(e.emId==id){
+                     itr.remove();;
+                         System.out.println("Employee Deleted Successfully.");
+                         found=true;
+                         break;
+                     }
+                     }
+                     if(!found){
+                         System.out.println("Employee Not Found.");
+                     }
                     break; 
                 case 7:
+                    System.out.println("Exiting....");
+                    sc.close();
                     System.exit(0);
                 default :
                     System.out.println("Invalid Choice! Please Enter 1 to 7");

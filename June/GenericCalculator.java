@@ -2,7 +2,9 @@
 package June;
 
 import java.util.Scanner;
-
+/*5. Generic Calculator Create a generic program 
+that works for Integer and Double. 
+Menu: Add Subtract Exit*/
 
 public class GenericCalculator {
     public static void main(String[] args) {

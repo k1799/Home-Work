@@ -23,6 +23,10 @@ public class Employee {
      return basicSalary+hra+da-pf;
      }
      void display(){
-         System.out.println(emId + " " + name + " " + department + " " + basicSalary);
+         System.out.println("Employee ID: "+emId);
+         System.out.println("Employee Name: "+name);
+         System.out.println("Department: "+department);
+         System.out.println("Basic Salary: "+basicSalary);
+         System.out.println("----------------------------");
      }
     }

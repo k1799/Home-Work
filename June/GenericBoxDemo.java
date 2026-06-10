@@ -18,7 +18,7 @@ public class GenericBoxDemo {
             
             System.out.println("Enter Choice");
             int ch=sc.nextInt();
-            sc.nextLine();
+            sc.nextLine();//buffer clear for sc.nextLine.
             switch(ch){
                 case 1:
                     System.out.println("Enter Integer");
