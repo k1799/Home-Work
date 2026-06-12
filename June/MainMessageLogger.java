@@ -17,5 +17,7 @@ public class MainMessageLogger {
        
        t1.start();
        t2.start();
+       
+        System.out.println(t1==t2);
     }
 }
