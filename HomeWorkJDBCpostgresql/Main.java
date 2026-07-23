@@ -1,5 +1,5 @@
 
-package HomeWorkJDBC;
+package HomeWorkJDBCpostgresql;
 
 import java.sql.SQLException;
 import java.util.Scanner;
@@ -7,6 +7,8 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) throws ClassNotFoundException, SQLException {
+        
+
         Scanner sc = new Scanner(System.in);
         Scanner se = new Scanner(System.in);
         
@@ -19,7 +21,7 @@ public class Main {
             System.out.println("1.Insert");
             System.out.println("2.Display");
             System.out.println("3.Update");
-            System.out.println("4.Delete");
+           System.out.println("4.Delete");
             System.out.println("5.Exit");
             
             System.out.print("Enter Choice:");
@@ -27,7 +29,7 @@ public class Main {
             
             switch(choice){
             
-                case 1:
+               case 1:
                     System.out.print("Enter id : ");
                     int id = sc.nextInt();
                     
@@ -55,7 +57,7 @@ public class Main {
                   
                   s.updateservice(uid,uname);
                   
-                  break;
+                 break;
                   
                 case 4:
                   System.out.print("Enter id : ");
@@ -67,6 +69,11 @@ public class Main {
                   
                 case 5:
                     System.out.println("Exited");
+                      
+                 break;
+                      
+                default:
+                    System.out.println("Invalid Choice Choose 1 to 5");
             }
             
         }while(choice!=5);

@@ -1,5 +1,5 @@
 
-package HomeWorkJDBC;
+package HomeWorkJDBCpostgresql;
 
 import java.sql.*;
 
@@ -36,11 +36,11 @@ public class Dao {
     ResultSet r = s.executeQuery("select * from students");
     
         System.out.println("--------------------------");
-        System.out.println("ID\tNAME\tDEPARTMENT"); 
+        System.out.println("ID NAME DEPARTMENT"); 
         System.out.println("--------------------------");
         
         while(r.next()){
-            System.out.println(r.getInt("sid")+" "+ r.getString("sname")+" "+r.getString("department"));
+            System.out.println(r.getInt ("sid") + " " + r.getString ("sname") + " " + r.getString("department"));
         }
         r.close();
         s.close();

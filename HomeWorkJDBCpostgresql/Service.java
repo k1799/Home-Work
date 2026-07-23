@@ -1,5 +1,5 @@
 
-package HomeWorkJDBC;
+package HomeWorkJDBCpostgresql;
 
 import java.sql.SQLException;
 
